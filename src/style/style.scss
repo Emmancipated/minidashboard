@@ -11,6 +11,7 @@ $font: 'League Spartan', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: .8rem;
 }
 
 body {
@@ -428,6 +429,11 @@ img {
   .control-left {
     color: rgba(147, 147, 147, 1);
   }
+
+  .current-page-bigScreen {
+    color: $grey-text-color;
+    display: none;
+  }
 }
 
 
@@ -679,8 +685,9 @@ img {
           display: none;
         }
 
-        .curreent-page-bigScreen {
+        .current-page-bigScreen {
           color: $grey-text-color;
+          display: block;
         }
 
         .pagecounter-wrapper {

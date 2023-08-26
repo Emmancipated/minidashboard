@@ -7,7 +7,7 @@ const PageCounter = (): React.JSX.Element => {
         <DropDownSelectorComponent
           title="5 per page"
         />
-        <div className="curreent-page-bigScreen">
+        <div className="current-page-bigScreen">
           Showing 1 - 10 of 40
         </div>
 
