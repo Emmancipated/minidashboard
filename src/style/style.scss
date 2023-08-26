@@ -1,0 +1,707 @@
+$global-background: #F9F9F9;
+$primary-background: #FFFFFF;
+$darker-green: #305C45;
+$darker-green-background: #305c451a;
+$orange: #e6a960;
+$orange-background: #e6a9601a;
+$grey-text-color: #939393;
+$font: 'League Spartan', sans-serif;
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $global-background;
+  font-family: $font;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+.order-summary-header-bigScreen, .order-summary-wrapper-bigScreen, .download-icon {
+  display: none;
+}
+//Header Styling
+.Header {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: $primary-background;
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo, .nav-item-controls {
+    display: none;
+  }
+
+  .nav-item-controls-small {
+    display: flex;
+    gap: 1.6rem;
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      cursor: pointer;
+
+      div {
+        height: 4px;
+        background-color: black;
+
+        &:nth-child(1) {
+          width: 26px;
+        }
+  
+        &:nth-child(2) {
+          width: 20px;
+          margin: 5px 0;
+        }
+  
+        &:nth-child(3) {
+          width: 30px;
+        }
+      }
+
+    }
+  }
+
+}
+
+.HomePage {
+  display: block;
+}
+
+//Main Links Styling
+.SideBarComponent {
+  background-color: white;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  
+
+  .main-links {
+    color: $grey-text-color;
+    .menu-head {
+      margin: 1rem 0;
+    }
+
+    .menu-item-contents {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .menu-item {
+      border-radius: 8px;
+      display: flex;
+      margin: .2rem 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(241, 241, 241, 1);
+
+        .active-bar {
+          background-color: rgba(48, 92, 69, 1);
+        }
+
+        .menu-item-contents, .item-icon svg path {
+          color: rgba(48, 92, 69, 1);
+          stroke: rgba(48, 92, 69, 1);
+        }
+      }
+
+      .active-bar {
+        width: 8px;
+        border-radius: 8px 0 0 8px;
+      }
+
+      .menu-item-contents {
+        padding: 1rem;
+
+        div {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.openSideBar {
+  margin-top: 0.2rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+
+// Sales Styling
+.Sales {
+  padding: 0 1rem;
+  display: block;
+
+  .SalesCard {
+    margin: 2rem 0;
+    background-color: $primary-background;
+    padding: 2rem;
+    border-radius: 8px;
+
+    .sales-title {
+      color: $grey-text-color;
+    }
+
+    .sales-figure {
+      margin: 1.5rem 0 0 0;
+    }
+
+    .sales-details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .sales-direction, .percentage {
+        display: flex;
+        align-items: center;
+      }
+      .sales-direction {
+        gap: .5rem;
+
+        .percentage {
+          padding: 0.2rem 0.7rem;
+          border-radius: 12px;  
+        }
+
+        .green {
+          background-color: $darker-green-background;
+          color: $darker-green;
+        }
+
+        .orange {
+          background-color: $orange-background;
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+//SalesAnalytics Styling
+.SalesAnalytics {
+  margin: 1rem;
+  display: block;  
+
+  .sales-analytics-container {
+    background-color: $primary-background;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .sales-analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sales-analytics-chart-container {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin-top: 3rem;
+
+    .analtyics-charts {
+      display: grid;
+      grid-template-rows: 90% 10%;
+    }
+
+    .analytics-amount-wrapper {
+      display: grid;
+      grid-template-rows: 91% 9%;
+      text-align: right;
+      color: $grey-text-color;
+
+      p {
+        margin: 2.5rem 0;
+      }
+    }
+    .analytics-month, .analytics-zero {
+      padding: .4rem 0; 
+    }
+
+    .analytics-chart-wrapper {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      .analtyics-charts > div {
+        margin: 0 auto;
+      }
+      .analtyics-charts {
+        padding-top: 2.5rem;
+        color: $grey-text-color;
+      }
+      .bar-wrapper {
+        display: grid;
+        align-items: flex-end;
+      }
+
+      .bar {
+        width: 4px;
+        background-color: $orange;
+        height: 100%;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  }
+}
+
+.TotalSales {
+  background-color: none;
+  border-radius: 0;
+
+  .totalsales-container {
+    background-color: $primary-background;
+    margin: 2rem 0;
+    border-radius: 8px;
+    padding: 1rem;
+
+    .totalsales-chart-area {
+      .AnalyticsChart {
+        position: relative;
+
+        p {
+          position: absolute;
+          top: 45%;
+          left: 52%;
+          font-size: 2rem;
+          translate: -50% -50%;
+        }
+      }
+    }
+
+    .totalsales-chart-keys {
+      .totalsales-chart-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20%;
+        row-gap: 1rem;
+
+        .chart-keys {
+          display: flex;
+          gap: 10px;
+          font-size: .9rem;
+
+          .chart-dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background-color: #e6a960;
+            background-color: #305c45;
+            background-color: #edf7d2;
+            background-color: #47a8bd;
+          }
+
+          .chart-name {
+            color: $grey-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// OrdersComponent Styling
+.OrdersComponent {
+  margin: 1rem;
+  
+  .orders-header {
+    h3 {
+      margin: 1rem 0;
+    }
+  }
+
+  .export-filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
+  .order-summary-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+
+    .order-summary-header-smallScreen {
+      display: block;
+    }
+
+    .order-summary-wrapper {
+      border: .8px solid rgba(147, 147, 147, 1);
+      border-radius: 8px;
+      margin: 1rem 0;
+
+      .summary-card-control-wrapper {
+        border-bottom: 1px solid rgba(147, 147, 147, 1);
+
+        .summary-card-controls {
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+
+          svg {
+            margin-left: 1rem;
+          }
+        }
+      }
+
+      .summary-contents {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .summary-headers {
+          color: rgba(147, 147, 147, 1);
+        }
+        .summary-values {
+          text-align: right;
+        }
+
+        .summary-headers div, .summary-values div {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+// FilterComponent Styling
+.FilterComponent, .DropDownSelector {
+      color: rgba(147, 147, 147, 1);
+      padding: .7rem 1rem;
+      border: 1px solid rgba(147, 147, 147, 1);
+      border-radius: 8px;
+      width: fit-content;
+      margin: 1rem 0;
+
+      .icon {
+        display: inline-block;
+      }
+}
+
+// DropDownSelector Styling
+.DropDownSelector {
+  color: black;
+}
+
+.PageCounter {
+  margin: 3rem 0 0 0;
+  .pages-tabs {
+    display: flex;
+    gap: .8rem;
+  }
+
+  .tab {
+    padding: .4rem .6rem;
+    background-color: rgba(241, 241, 241, 1);
+    margin: auto 0;
+    font-size: 1.2rem;
+    color: rgba(48, 92, 69, 1);
+    border-radius: 4px;
+
+    &:nth-of-type(2) {
+      color: white;
+      background-color: rgba(48, 92, 69, 1);
+    }
+    
+  }
+
+  .dottab {
+    font-size: 1.7rem;
+  }
+
+  .control-left {
+    color: rgba(147, 147, 147, 1);
+  }
+}
+
+
+// Bigger Screen
+@media (min-width: 780px) {
+  //Header Styling
+  .Header {
+    padding: 1rem;
+    grid-template-columns: 20% 80%;
+
+    .logo, .nav-item-controls {
+      display: block;
+    }
+
+    .nav-item-controls {
+      display: flex;
+      gap: 2.5rem;
+
+      .searchbar-container {
+        position: relative;
+
+        input {
+          padding: 1rem 0 1rem 3rem;
+          min-width: 330px;
+          border: 1.4px solid rgba(147, 147, 147, 1);
+          border-radius: 8px;
+          &::placeholder {
+            font-family: $font;
+          }
+        }
+
+        svg {
+          position: absolute;
+          transform: translate(.8rem, .8rem);
+          min-width: 25px;
+          min-height: 25px;
+        }
+      }
+
+      .user-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .user-image-wrapper {
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+          }
+        }
+        .user-container {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+
+          .user-details {
+            h3 {
+              margin-bottom: .5rem;
+            }
+          }
+        }
+      }
+    }
+  
+    img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .nav-item-controls-small {
+      display: none;
+    }
+  }
+
+  // HomePage Styling
+  .HomePage {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+
+  // Sales Styling
+  .Sales {
+    display: flex;
+    gap: .8rem;
+  }
+
+  //SalesAnalytics Styling
+  .SalesAnalytics {
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // TotalSales Styling
+  .TotalSales { 
+    background-color: $primary-background;
+    border-radius: 8px;
+  }
+
+  //OrdersComponent Styling
+  .OrdersComponent {
+  
+    .orders-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .export-filter-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+      gap: 2rem;
+    }
+  
+    .order-summary-container {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+
+      .order-summary-header-smallScreen {
+        display: none;
+      }
+
+      .order-summary-header-bigScreen {
+        display: flex;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(147, 147, 147, 1);
+        color: $grey-text-color;
+
+        .summary-header-item-wrapper {
+          cursor: pointer;
+
+          .summary-header-item {
+            padding: .5rem;
+          }
+        }
+
+        .active {
+          .summary-header-state {
+            height: 5px;
+            background-color: rgba(48, 92, 69, 1);
+            border-radius: 4px 4px 0px 0px;
+          }
+        }
+      }
+  
+      .order-summary-wrapper {
+        border: .8px solid rgba(147, 147, 147, 1);
+        border-radius: 8px;
+        margin: 1rem 0;
+        display: none;
+  
+        .summary-card-control-wrapper {
+          border-bottom: 1px solid rgba(147, 147, 147, 1);
+          
+  
+          .summary-card-controls {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+  
+            svg {
+              margin-left: 1rem;
+            }
+          }
+        }
+  
+        .summary-contents {
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+  
+          .summary-headers {
+            color: rgba(147, 147, 147, 1);
+          }
+          .summary-values {
+            text-align: right;
+          }
+  
+          .summary-headers div, .summary-values div {
+            margin: 1rem 0;
+          }
+        }
+      }
+
+      .order-summary-wrapper-bigScreen {
+        color: $grey-text-color;
+        display: block;
+
+        .summary-headers, .summary-values {
+          display: grid;
+          grid-template-columns: repeat(8, 1fr);
+        }
+
+        .summary-headers {
+          margin: 1rem 0 2.4rem 0;
+
+        }
+
+        .summary-values {
+          margin: 1.4rem 0;
+
+          .headers-item {
+            &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(5), &:nth-of-type(6){
+              color: black;
+            } 
+          }
+        }
+
+        .completed {
+          .headers-item {
+            &:nth-of-type(7) {
+              color: rgba(83, 161, 120, 1);
+            }
+          }
+        }
+
+        .shipped {
+          .headers-item {
+            &:nth-of-type(7) {
+              color: rgba(49, 54, 56, 1);
+            }
+          }
+        }
+
+        .pending {
+          .headers-item {
+            &:nth-of-type(7) {
+              color: rgba(228, 67, 57, 1);
+            }
+          }
+        }
+
+        .refunded {
+          .headers-item {
+            &:nth-of-type(7) {
+              color: rgba(230, 169, 96, 1);
+            }
+          }
+        }
+      }
+
+      .PageCounter {
+        border-top: 1px solid $grey-text-color;
+
+        .DropDownSelector {
+          display: none;
+        }
+
+        .curreent-page-bigScreen {
+          color: $grey-text-color;
+        }
+
+        .pagecounter-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 1.5rem 0;
+        }
+      }
+    }
+  }
+
+  .SideBarComponent {
+    margin-top: 0.2rem;
+    padding: 1rem;
+    height: 100%;
+    overflow: visible;
+  } 
+
+  .download-icon {
+    display: block;
+  }
+}
+
