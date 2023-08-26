@@ -10,7 +10,7 @@ const FilterComponent = (props: FilterContents): React.JSX.Element => {
 
   return (
     <section className="FilterComponent">
-      {title} <span className="icon"> {icon}</span>
+      <span>{title}</span> <span className="icon"> {icon}</span>
     </section>
   )
 }
